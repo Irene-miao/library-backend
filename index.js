@@ -316,9 +316,9 @@ app.use(cors('*'))
 app.use(express.static('build'))
 server.applyMiddleware({ app })
 
-
-httpServer.listen(process.env.PORT, () => 
-    console.log(`Server ready at http://localhost:${process.env.PORT}${server.graphqlPath}`));
+const PORT = process.env.PORT
+httpServer.listen(PORT, () => 
+    console.log(`Server ready at http://localhost:${PORT}${server.graphqlPath}`));
     console.log(
       `🚀 Subscription endpoint ready at ws://localhost:${PORT}${server.graphqlPath}`
     );
